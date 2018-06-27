@@ -9,6 +9,7 @@ syntax include @SQL syntax/sql.vim
 "	Take care not to consume the double-quotes (\zs & \ze).
 "	Matches are case-sensitive (\C), because I always uppercase SQL keywords.
 syntax region sqlSnippet start=/"\C\zs\v(SELECT|INSERT|UPDATE|DELETE|CREATE|DROP)/ end=/\ze"/ contains=@SQL containedin=pythonString
+syntax region sqlSnippet start=/\zs\v(SELECT|FROM|AND|WHERE|OR|ON|GROUP BY|ORDER BY)/ end=/\ze'''/ contains=@SQL containedin=pythonString
 
 " Restore original syntax.
 let b:current_syntax = saved_syntax
